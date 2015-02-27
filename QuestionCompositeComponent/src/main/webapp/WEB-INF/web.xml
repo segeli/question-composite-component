@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+	<display-name>QuestionCompositeComponent</display-name>
+	<welcome-file-list>
+		<welcome-file>index.xhtml</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<servlet-name>Faces Servlet</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.xhtml</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.jsf</url-pattern>
+	</servlet-mapping>
+
+	<!-- MIME MAPPINGS -->
+	<mime-mapping>
+		<extension>css</extension>
+		<mime-type>text/css</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>gif</extension>
+		<mime-type>image/gif</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>html</extension>
+		<mime-type>text/html</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>htm</extension>
+		<mime-type>text/html</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>ico</extension>
+		<mime-type>image/x-icon</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>jpeg</extension>
+		<mime-type>image/jpeg</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>jpg</extension>
+		<mime-type>image/jpeg</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>js</extension>
+		<mime-type>application/x-javascript</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>png</extension>
+		<mime-type>image/png</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>txt</extension>
+		<mime-type>text/plain</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>xml</extension>
+		<mime-type>text/xml</mime-type>
+	</mime-mapping>
+
+	<!-- session timeout (in minutes) -->
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
+</web-app>

@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:composite="http://java.sun.com/jsf/composite"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>This content will not be displayed</title>
+</h:head>
+<h:body>
+	<composite:interface>
+		<composite:attribute name="question" required="true" />
+		<composite:attribute name="options" required="false" />
+		<composite:attribute name="answer" required="true" />
+		<composite:attribute name="type" required="true" />
+	</composite:interface>
+
+	<composite:implementation>
+		<h:outputLabel value="#{cc.attrs.question}: " ></h:outputLabel>
+		<p:selectOneMenu value="#{cc.attrs.answer}" rendered="#{cc.attrs.type == 'oneSelectItem'}" style="width:250px;">
+			<f:selectItems value="#{cc.attrs.options}" var="option" itemLabel="#{option}" itemValue="#{option}"/>
+		</p:selectOneMenu>
+		<p:inputText type="text" value="#{cc.attrs.answer}" rendered="#{cc.attrs.type == 'inputText'}" style="width:250px;"/>
+	</composite:implementation>
+</h:body>
+</html>

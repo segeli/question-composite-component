@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:em="http://java.sun.com/jsf/composite/emcomp">
+
+<ui:composition template="./WEB-INF/templates/template.xhtml">
+	<ui:define name="top"></ui:define>
+	<ui:define name="content">
+		<h:form>
+			<h:panelGrid columns="1">
+				<p:dataTable value="#{questionBean.questionList}" var="q" style="margin: 0 auto">
+					<p:column headerText="Questions">
+						<em:question answer="#{q.answer}" question="#{q.question}"
+							type="#{q.type}" options="#{q.options}"></em:question>
+					</p:column>
+				</p:dataTable>
+				<p:commandButton value="Apply" action="#{questionBean.listAnswer()}"/>
+			</h:panelGrid>
+		</h:form>
+	</ui:define>
+</ui:composition>
+
+</html>
